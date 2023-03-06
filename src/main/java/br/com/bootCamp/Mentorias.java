@@ -9,25 +9,24 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Mentorias {
+public class Mentorias extends Conteudo{
 
-    private String titulo;
-    private String descricao;
     private LocalDate dataDaMentoria;
 
-
-    private Double calcularXP(){
-        return null;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20d;
     }
 
     @Override
     public String toString() {
         return "Mentorias{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", dataDaMentoria=" + dataDaMentoria +
                 '}';
     }
+
 
 }
 
